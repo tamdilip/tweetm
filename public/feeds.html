@@ -194,8 +194,8 @@ class="material-icons">camera_enhance</i>Change' data-fp-apikey="ATSp3IoMnRhaIv7
       
 <span ng-repeat="xx in f1" ng-if="xx.name==userSession">
 <div align="left" class="t1"  ng-repeat="x in fm | orderBy: 'createdAt'"  > 
-<div ng-if="x.user1==chatSession">{{x.user1}} -- {{x.message}} --{{x.createdAt | date: 'fullDate'}} </div>
-<div align="right" class="t2" ng-if="x.user2==userSession">
+<div ng-if="x.user1==chatSession || x.user2==userSession">{{x.user1}} -- {{x.message}} --{{x.createdAt | date: 'fullDate'}} </div>
+<div align="right" class="t2" ng-if="x.user1==chatSession || x.user2==userSession">
 {{x.user2}} -- {{x.message}} --{{x.createdAt | date: 'fullDate'}}
 </div>
 </div>
