@@ -6,7 +6,9 @@ app.controller('tctrl',['$scope','$http','$window','$interval','ngDialog',functi
 $scope.uname='';
 $scope.pass='';
 
-  
+  $scope.redir=function(){
+  $window.location.href='/index.html';	
+  };
  $scope.copen = function () {
         ngDialog.open({ template: 'de.html', className: 'ngdialog-theme-default',scope: $scope });
     };
