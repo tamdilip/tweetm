@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Follow</title>
+
+<script type="text/javascript" src="/js/angular.min.js"></script>
+<script type="text/javascript" src="/js/ui-bootstrap-tpls.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="/js/scrollglue.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/bootplus.css">
+<link rel="stylesheet" type="text/css" href="/css/bootplus.min.css">
+<link rel="stylesheet" type="text/css" href="/css/bootplus-responsive.css">
+<link rel="stylesheet" type="text/css" href="/css/bootplus-responsive.min.css">
+
+
+<link rel="stylesheet" type="text/css" href="/css/ngDialog.css">
+<link rel="stylesheet" type="text/css" href="/css/ngDialog-theme-default.css">
+<script type="text/javascript" src="/js/ngDialog.js"></script>
+
+
+<style type="text/css">
+
+[scroll-glue-top],
+
+[scroll-glue-bottom],
+
+[scroll-glue]
+{
+
+height: 200px;
+
+overflow-y: scroll;
+
+width:200px;
+}
+
+
+
+</style>
+
+<link rel="stylesheet" type="text/css" href="/css/bootstrap-combined.min.css">
+<link rel="stylesheet" type="text/css" href="/css/chat.css">
+
+<link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.indigo-deep_purple.min.css">
+<script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+</head>
+
+
+
+<body style="background-color:#212121;color:white;"  ng-app="tweet" ng-controller="tctrl" >
+<div ng-show="!userSession">
+Login to Continue
+<div ng-include="'/index.html'"></div>
+</div>
+
+<div ng-show="userSession">
+
+
+
+<style>
+.mdl-layout__header {
+  background-color: #673ab7;
+}
+</style>
+
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+       <i class="material-icons" ng-click="back()">keyboard_backspace</i>
+
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+  
+  <i class="material-icons">search</i>
+<input type="text"  typeahead-on-select="setPcode($item)" ng-model="selected" typeahead="state.name for state in states | filter:$viewValue" /> 
+   
+<button id="demo-menu-lower-right"
+        class="mdl-button mdl-js-button mdl-button--icon">
+  <i class="material-icons">more_vert</i>
+</button>
+
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+<li class="mdl-menu__item"><a href="feeds.html">Home</a></li>  
+<li class="mdl-menu__item"  ng-click="logout()"><a>Sign Out</a></li>
+</ul>
+
+</div>
+
+</header>
+ 
+  <main class="mdl-layout__content">
+    <div class="page-content">
+
+
+
+<style>
+    .img-circle {
+        border-radius: 50%;
+    box-shadow: 0 0 5px 2px #673ab7; 
+}
+
+#mydiv {
+margin:auto;
+   left: 50%;
+    width:30em;
+    margin-top: -20em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    position:absolute;
+}
+
+
+</style>
+<a href="https://github.com/tamdilip/tweet"><img style="position: absolute; top: 0; 
+
+left: 0; border: 0;" 
+
+src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/6874
+
+7470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6
+
+d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-
+
+src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
+<div id="mydiv">
+
+<div ng-repeat="myImage in f1" ng-show="myImage.name==userSession1">
+<img class="img-circle" ng-src="{{myImage.dp}}" width=90px height=90px/>
+</div> 
+{{userSession1}} 
+<br>
+
+<span ng-repeat="xx in f1" ng-if="xx.name==userSession">
+<div ng-repeat="x1 in f1" ng-if="x1.name && x1.name==userSession1" ng-hide="userSession==x1.name">
+<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-hide = "xx.following.indexOf(x1.name)!=-1" ng-click="follow(x1.name)">Follow</button>
+<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-show = "xx.following.indexOf(x1.name)!=-1" ng-click="unfollow(x1.name)">Unfollow</button>
+</div>
+</span>
+
+
+
+
+
+
+
+<div class="chat-box">
+
+<div align="right" ng-click="hide()"> 
+<div ng-if="pop">
+<img ng-src="message-icon.png" width=40px height=40px /></div>
+</div>
+<label ng-click="tog() || hide()" >{{state}}</label>
+<div ng-show="collapsed">
+<div scroll-glue>
+      
+<span ng-repeat="xx in f1" ng-if="xx.name==userSession">
+<div align="left" class="t1"  ng-repeat="x in f | orderBy: 'createdAt'"  > 
+<div ng-if="x.user==userSession1"">{{x.user}} -- {{x.feeds}} --{{x.createdAt | date: 'fullDate'}} </div>
+<div align="right" class="t2" ng-if="x.user==userSession">
+{{x.user}} -- {{x.feeds}} --{{x.createdAt | date: 'fullDate'}}
+</div>
+</div>
+</span>  </div>
+<input class="t" type="text" ng-keypress="changeValueButton()" ng-keyup=" $event.keyCode == 13 && feedp()"  ng-model="feed">
+</div></div>
+    
+
+
+</div>
+
+
+<style>
+.demo-card-wide.mdl-card {
+width: 440px;
+background-color:#1de9b6;
+
+}
+.material-icons.md-18 { font-size: 18px; }
+
+
+
+[scroll-glue1-top],
+
+[scroll-glue1-bottom],
+
+[scroll-glue1]
+{
+
+height: 800px;
+
+overflow-y:auto;
+width:500px;
+
+}
+
+
+
+</style>
+
+<div id="mydiv" style="margin-top:-10em;margin-left: -17em;text-align:left;" >
+
+<div  scroll-glue1>
+      
+   <span ng-repeat="myImage in f1" ng-show="myImage.name==userSession1">
+<span ng-repeat="xx in f1" ng-if="xx.name==userSession" >
+<div ng-repeat="x in f | orderBy: '-createdAt' "  ng-show="x.user==userSession1">
+
+<div style="width:500px;color:black;" class="card">
+   <div style="margin-top:-0.6em;margin-bottom:-0.2em;" class="card-heading image">
+<img style="box-shadow: 0 0 2px 1px #673ab7;width:35px;height:35px;" ng-src="{{myImage.dp}}" alt=""/>
+      
+      <div  class="card-heading-header">
+         <h3 style="margin-bottom:-0.1em;color:#673ab7;">{{x.user}}</h3>
+         <span>{{x.createdAt | date: 'fullDate'}}</span>
+     </div>
+   </div>
+   <div  style="margin-top:0.5em; margin-left: 4em;" class="card-body">
+      <p style="font-size:20px" >{{x.feeds}}</p>
+   </div>
+</div>
+</div>
+</span>
+</span>
+</div>
+</div>
+
+</div>
+
+ </main>
+</div>
+
+
+
+
+</body>
+</html>

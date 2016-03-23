@@ -1,0 +1,9 @@
+app.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+      when('/d', {
+        templateUrl: 'signup.html',
+        controller: 'tctrl'
+    });
+}]);
+ 

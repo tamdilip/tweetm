@@ -1,0 +1,44 @@
+{
+  
+"name": "test",
+  
+"version": "1.0.0",
+  
+"main": "server.js",
+ 
+ "scripts": {
+    "start": "node server.js"
+  },
+ 
+"dependencies": {
+    
+"express": "^4.13.3",
+    
+"nedb": "^1.5.1",
+    
+"body-parser": "^1.14.2" ,
+    
+"multer": "^1.1.0",
+ "mongoose": ">=4.1.11",
+     "mongodb": "~2.0",
+        "asserts": "4.0.2",
+        "twilio": "1.5.0"
+ 
+  
+},
+  
+ "engines": {
+    "node": "0.12.7",
+     "npm" : ">=2.1.x"
+  }, 
+  "repository": {
+    "type": "git",
+    "url": "git clone https://github.com/tamdilip/tweet"
+  }, 
+ "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+"license": "ISC"
+}
