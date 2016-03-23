@@ -233,6 +233,7 @@ console.log(response);
 $scope.fm=response;
 	  });
 
+$scope.chatSession='';
 $scope.chatUser = function(id) {
 console.log(id);
 $scope.chatSession=id;
