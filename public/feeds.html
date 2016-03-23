@@ -56,7 +56,7 @@ width:200px;
 <body style="background-color:#212121;color:white;"  ng-app="tweet" ng-controller="tctrl" >
 <div ng-show="!userSession">
 Login to Continue
-<div ng-include="'/index.html'"></div>
+<div ng-init="redir()"></div>
 </div>
 
 <div ng-show="userSession">
