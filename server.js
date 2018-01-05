@@ -92,6 +92,8 @@ client.messages.create({
 	from: "+14843034127", 
 	body: "Your otp to change password : " +otp,   
 }, function(err, message) { 
+	console.log(err);
+	console.log(message);
 	console.log("Message not Sent"); 
 });
 }
