@@ -33,8 +33,8 @@ console.log(doc);
 });
 }, 300000); 
 
-var accountSid = 'AC91a1d97facad08b88108e91daa1c99b5'; 
-var authToken = 'c840204ad112f9af535a3af7f10f9424'; 
+var accountSid = ''; 
+var authToken = ''; 
  
 var client = require('twilio')(accountSid, authToken); 
 
